@@ -1,0 +1,14 @@
+---
+import { siteConfig } from "../config";
+---
+
+<footer class="py-8 bg-[var(--color-primary-dark)] border-t border-[var(--color-primary-light)]/10">
+  <div class="max-w-5xl mx-auto px-5 text-center">
+    <p class="text-sm text-slate-500" style="font-family: 'Source Sans 3', sans-serif;">
+      &copy; {new Date().getFullYear()} {siteConfig.fullName} · CMP {siteConfig.credentials.cmp} · RNE {siteConfig.credentials.rne}
+    </p>
+    <p class="text-xs text-slate-600 mt-2" style="font-family: 'Source Sans 3', sans-serif;">
+      Hecho con <span class="text-[var(--color-accent)]">&hearts;</span> por <a href="https://cofoundy.dev" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-[var(--color-accent)] transition-colors">Cofoundy</a>
+    </p>
+  </div>
+</footer>

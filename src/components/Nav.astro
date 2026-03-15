@@ -1,0 +1,67 @@
+---
+import { siteConfig } from "../config";
+---
+
+<nav id="main-nav" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 opacity-0 pointer-events-none transition-all duration-300">
+  <div class="bg-[var(--color-surface)]/90 backdrop-blur-md border border-[var(--color-primary-light)]/20 rounded-full px-4 sm:px-6 py-2.5 flex items-center gap-4 sm:gap-6 shadow-lg shadow-black/20">
+    <!-- Heart icon -->
+    <a href="#hero" class="flex items-center gap-2 text-[var(--color-accent)] font-bold text-sm whitespace-nowrap">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="shrink-0">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      <span class="hidden sm:inline font-['Source_Sans_3']">Dr. Butler</span>
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden sm:flex items-center gap-4 text-sm font-['Source_Sans_3']">
+      <a href="#sobre-mi" class="text-slate-300 hover:text-[var(--color-accent)] transition-colors">Sobre Mí</a>
+      <a href="#trayectoria" class="text-slate-300 hover:text-[var(--color-accent)] transition-colors">Trayectoria</a>
+      <a href="#contacto" class="text-slate-300 hover:text-[var(--color-accent)] transition-colors">Contacto</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button id="mobile-menu-btn" class="sm:hidden text-slate-300 hover:text-[var(--color-accent)] transition-colors" aria-label="Menú">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="sm:hidden hidden mt-2 bg-[var(--color-surface)]/95 backdrop-blur-md border border-[var(--color-primary-light)]/20 rounded-2xl px-5 py-4 shadow-lg shadow-black/20">
+    <div class="flex flex-col gap-3 text-sm font-['Source_Sans_3']">
+      <a href="#sobre-mi" class="text-slate-300 hover:text-[var(--color-accent)] transition-colors">Sobre Mí</a>
+      <a href="#donde-atiendo" class="text-slate-300 hover:text-[var(--color-accent)] transition-colors">Dónde Atiendo</a>
+      <a href="#alcance" class="text-slate-300 hover:text-[var(--color-accent)] transition-colors">Formación Internacional</a>
+      <a href="#trayectoria" class="text-slate-300 hover:text-[var(--color-accent)] transition-colors">Trayectoria</a>
+      <a href="#contacto" class="text-slate-300 hover:text-[var(--color-accent)] transition-colors">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  // Show nav after scrolling past hero
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      nav?.classList.remove('opacity-0', 'pointer-events-none');
+      nav?.classList.add('opacity-100', 'pointer-events-auto', 'header-visible');
+    } else {
+      nav?.classList.add('opacity-0', 'pointer-events-none');
+      nav?.classList.remove('opacity-100', 'pointer-events-auto');
+    }
+  });
+
+  // Mobile toggle
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+
+  // Close menu on link click
+  menu?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => menu?.classList.add('hidden'));
+  });
+</script>

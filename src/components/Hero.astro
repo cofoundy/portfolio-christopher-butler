@@ -1,0 +1,70 @@
+---
+import { siteConfig } from "../config";
+const base = import.meta.env.BASE_URL?.replace(/\/$/, '') || '';
+---
+
+<section id="hero" class="relative min-h-screen flex items-center bg-[var(--color-primary-dark)] overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-dark)] via-[var(--color-surface)] to-[var(--color-primary-dark)] opacity-50"></div>
+
+  <!-- ECG Pulse Line -->
+  <svg class="absolute bottom-20 left-0 w-full h-12 pulse-glow" viewBox="0 0 1200 50" fill="none" preserveAspectRatio="none">
+    <path class="pulse-line" d="M0 25 L200 25 L220 25 L240 10 L260 40 L280 5 L300 45 L320 25 L400 25 L600 25 L620 25 L640 8 L660 42 L680 3 L700 47 L720 25 L900 25 L1200 25" stroke="var(--color-accent)" stroke-width="1.5" fill="none" opacity="0.4"/>
+  </svg>
+
+  <div class="relative z-10 w-full max-w-6xl mx-auto px-5 py-20 sm:py-0">
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          Dr. Christopher<br/>
+          <span class="text-[var(--color-accent)]">Butler Vallejo</span>
+        </h1>
+
+        <div class="hero-subtitle flex items-center gap-3 my-4 justify-center md:justify-start">
+          <div class="h-px w-8 bg-[var(--color-accent)]"></div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--color-accent)">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <div class="h-px w-8 bg-[var(--color-accent)]"></div>
+        </div>
+
+        <p class="hero-subtitle text-lg sm:text-xl text-[var(--color-accent)] font-semibold" style="font-family: 'Source Sans 3', sans-serif;">
+          Médico Cardiólogo
+        </p>
+
+        <p class="hero-credentials mt-2 text-sm text-slate-400 tracking-wider" style="font-family: 'Source Sans 3', sans-serif;">
+          CMP {siteConfig.credentials.cmp} · RNE {siteConfig.credentials.rne}
+        </p>
+
+        <div class="hero-stats grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
+          {siteConfig.stats.map((stat) => (
+            <div class="bg-[var(--color-surface)]/60 border border-[var(--color-primary-light)]/20 rounded-lg px-3 py-3 text-center">
+              <div class="font-stats text-2xl sm:text-3xl font-bold text-[var(--color-accent)]">{stat.value}</div>
+              <div class="text-xs text-slate-400 mt-1" style="font-family: 'Source Sans 3', sans-serif;">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div class="hero-cta flex flex-col sm:flex-row gap-3 mt-8 justify-center md:justify-start">
+          <a href="#contacto" class="btn-hover inline-flex items-center justify-center gap-2 bg-[var(--color-accent)] text-[var(--color-primary-dark)] font-semibold px-6 py-3 rounded-full text-sm" style="font-family: 'Source Sans 3', sans-serif;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            Agendar Consulta
+          </a>
+          <a href="#trayectoria" class="inline-flex items-center justify-center gap-2 border border-[var(--color-primary-light)]/40 text-slate-300 px-6 py-3 rounded-full text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors" style="font-family: 'Source Sans 3', sans-serif;">
+            Ver Trayectoria
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo flex-shrink-0">
+        <div class="relative">
+          <div class="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-[var(--color-accent)]/30 shadow-2xl shadow-[var(--color-accent)]/10">
+            <img src={`${base}/profile.jpg`} alt={siteConfig.name} class="w-full h-full object-cover object-top" loading="eager" />
+          </div>
+          <div class="absolute inset-0 rounded-full bg-[var(--color-accent)]/5 blur-3xl -z-10 scale-110"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

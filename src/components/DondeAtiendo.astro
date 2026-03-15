@@ -1,0 +1,41 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="donde-atiendo" class="py-16 sm:py-20 bg-[var(--color-surface)]">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-10 reveal">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">Dónde Me Encuentran</h2>
+      <div class="flex items-center gap-3 mt-3 justify-center">
+        <div class="h-px w-8 bg-[var(--color-accent)]"></div>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-accent)">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <div class="h-px w-8 bg-[var(--color-accent)]"></div>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5">
+      {siteConfig.dondeAtiendo.map((lugar, i) => (
+        <div class={`reveal stagger-${i + 1} card-hover bg-[var(--color-surface-light)] border-l-4 border-[var(--color-accent)] rounded-xl p-6`}>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-['Source_Sans_3'] font-semibold uppercase tracking-widest text-[var(--color-accent)]">
+              {lugar.tipo}
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-white">{lugar.nombre}</h3>
+          <p class="text-slate-300 font-['Source_Sans_3'] mt-1">{lugar.cargo}</p>
+          <p class="text-sm text-slate-400 font-['Source_Sans_3'] mt-1">{lugar.periodo}</p>
+          {lugar.destacado && (
+            <div class="mt-3 inline-flex items-center gap-1.5 bg-[var(--color-accent)]/10 text-[var(--color-accent)] text-xs font-['Source_Sans_3'] font-semibold px-3 py-1 rounded-full">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              {lugar.destacado}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

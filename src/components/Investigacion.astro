@@ -1,0 +1,47 @@
+---
+import { siteConfig } from "../config";
+const inv = siteConfig.investigacion;
+---
+
+<section id="investigacion" class="py-16 sm:py-20 bg-[var(--color-primary-dark)]">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="text-center mb-10 reveal">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">Investigación</h2>
+      <div class="flex items-center gap-3 mt-3 justify-center">
+        <div class="h-px w-8 bg-[var(--color-accent)]"></div>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-accent)">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <div class="h-px w-8 bg-[var(--color-accent)]"></div>
+      </div>
+    </div>
+
+    <!-- Featured publication -->
+    <div class="reveal card-hover bg-[var(--color-surface-light)] border border-[var(--color-primary-light)]/20 rounded-xl p-6 sm:p-8">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="bg-[var(--color-accent)]/10 text-[var(--color-accent)] text-xs font-['Source_Sans_3'] font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+          Artículo Original
+        </span>
+        <span class="font-stats text-sm text-slate-400">{inv.año}</span>
+      </div>
+
+      <h3 class="text-lg sm:text-xl font-bold text-white leading-snug">
+        {inv.titulo}
+      </h3>
+
+      <p class="text-[var(--color-accent)] font-['Source_Sans_3'] text-sm mt-2">
+        {inv.tipo}
+      </p>
+
+      <p class="text-slate-400 font-['Source_Sans_3'] text-sm mt-1 italic">
+        {inv.revista}
+      </p>
+
+      <div class="section-separator my-5"></div>
+
+      <p class="text-sm text-slate-400 font-['Source_Sans_3']">
+        + {inv.otrosTrabajos} trabajos de investigación como coautor — II Congreso Internacional de Medicina, Cirugía, Pediatría y Ginecología (2004)
+      </p>
+    </div>
+  </div>
+</section>
