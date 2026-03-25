@@ -2,10 +2,12 @@
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
 import DondeAtiendo from "../components/DondeAtiendo.astro";
+import Experiencia from "../components/Experiencia.astro";
 import SobreMi from "../components/SobreMi.astro";
 import AlcanceInternacional from "../components/AlcanceInternacional.astro";
 import Sociedades from "../components/Sociedades.astro";
 import Trayectoria from "../components/Trayectoria.astro";
+import EnMedios from "../components/EnMedios.astro";
 import Investigacion from "../components/Investigacion.astro";
 import Contacto from "../components/Contacto.astro";
 import Footer from "../components/Footer.astro";
@@ -23,10 +25,61 @@ const base = import.meta.env.BASE_URL?.replace(/\/$/, '') || '';
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={siteConfig.description} />
 
+    <!-- SEO -->
+    <meta name="keywords" content="cardiólogo Lima, Dr Christopher Butler, cardiólogo SANNA, cardiólogo San Borja, ecocardiografía, insuficiencia cardíaca, hipertensión arterial, médico cardiólogo Perú, Hospital Lima Este Vitarte" />
+    <meta name="author" content="Dr. Christopher Oskar Butler Vallejo" />
+    <link rel="canonical" href="https://drcbutler.com/" />
+
     <!-- Open Graph -->
     <meta property="og:title" content={`${siteConfig.name} — ${siteConfig.title}`} />
     <meta property="og:description" content={siteConfig.description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://drcbutler.com/" />
+    <meta property="og:image" content="https://drcbutler.com/og.jpg" />
+    <meta property="og:locale" content="es_PE" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${siteConfig.name} — ${siteConfig.title}`} />
+    <meta name="twitter:description" content={siteConfig.description} />
+    <meta name="twitter:image" content="https://drcbutler.com/og.jpg" />
+
+    <!-- Schema.org JSON-LD: Physician -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Christopher Oskar Butler Vallejo",
+      "jobTitle": "Médico Cardiólogo",
+      "description": siteConfig.description,
+      "url": "https://drcbutler.com/",
+      "image": "https://drcbutler.com/og.jpg",
+      "telephone": "+51999434491",
+      "email": "chrisbutler75@yahoo.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Borja",
+        "addressRegion": "Lima",
+        "addressCountry": "PE"
+      },
+      "medicalSpecialty": ["Cardiology", "Echocardiography"],
+      "memberOf": [
+        { "@type": "Organization", "name": "European Society of Cardiology" },
+        { "@type": "Organization", "name": "Heart Failure Association (ESC)" },
+        { "@type": "Organization", "name": "Sociedad Argentina de Cardiología" },
+        { "@type": "Organization", "name": "Sociedad Peruana de Cardiología" }
+      ],
+      "worksFor": [
+        { "@type": "Hospital", "name": "Clínica SANNA" },
+        { "@type": "Hospital", "name": "Hospital de Lima Este - Vitarte" }
+      ],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Universidad de San Martín de Porres" },
+        { "@type": "CollegeOrUniversity", "name": "Universidad Nacional Federico Villarreal" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/christopher-butler-4ab382175/"
+      ]
+    })} />
 
     <!-- Fonts: DM Serif Display + Source Sans 3 + Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,10 +96,12 @@ const base = import.meta.env.BASE_URL?.replace(/\/$/, '') || '';
     <main>
       <Hero />
       <DondeAtiendo />
+      <Experiencia />
       <SobreMi />
       <AlcanceInternacional />
       <Sociedades />
       <Trayectoria />
+      <EnMedios />
       <Investigacion />
       <Contacto />
     </main>

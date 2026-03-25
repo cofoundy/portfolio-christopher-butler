@@ -91,6 +91,41 @@ export const siteConfig = {
     { sigla: "SPC", nombre: "Sociedad Peruana de Cardiología", tipo: "Miembro Asociado" },
   ],
 
+  experiencia: [
+    {
+      institucion: "Marina de Guerra del Perú",
+      cargo: "Médico Cardiólogo — Departamento de Cardiología",
+      periodo: "2003 — 2023",
+      duracion: "20 años",
+      destacado: true,
+      detalle: "Policlínico Naval de San Borja, Hospital Naval, Fuerza de Aviación Naval. Dos décadas de servicio ininterrumpido en la institución donde se formó como cardiólogo.",
+    },
+    {
+      institucion: "Clínica SANNA",
+      cargo: "Médico-Cardiólogo",
+      periodo: "2019 — Actualidad",
+      destacado: true,
+      detalle: "Red de salud privada más grande del Perú.",
+    },
+    {
+      institucion: "Hospital de Lima Este - Vitarte",
+      cargo: "Cardiólogo",
+      periodo: "2024 — Actualidad",
+      detalle: "Servicio de Cardiología del sector público.",
+    },
+    {
+      institucion: "Centro Médico Peruano-Suizo (Suiza Lab)",
+      cargo: "Coordinador del Área de Cardiología",
+      periodo: "2009 — 2013",
+      detalle: "Angamos, Miraflores.",
+    },
+    {
+      institucion: "Callao Salud S.A.C.",
+      cargo: "Cardiólogo",
+      periodo: "2014 — 2017",
+    },
+  ],
+
   trayectoria: [
     { año: "2024", titulo: "Docente — U. Científica del Sur", desc: "Medicina Humana" },
     { año: "2023", titulo: "Eco Transesofágica", desc: "U. del Salvador, Buenos Aires" },
@@ -100,6 +135,7 @@ export const siteConfig = {
     { año: "2009", titulo: "Stage Internacional", desc: "NY (USA) + Bogotá (Colombia)" },
     { año: "2007", titulo: "Especialidad Cardiología", desc: "UNFV (2007-2010)" },
     { año: "2006", titulo: "Homologación en España", desc: "Título profesional europeo" },
+    { año: "2003", titulo: "Marina de Guerra del Perú", desc: "Inicio de 20 años de servicio" },
     { año: "2002", titulo: "Médico Cirujano — USMP", desc: "SERUMS Base Naval de Paita" },
     { año: "1981", titulo: "Liceo Naval Almirante Guise", desc: "Formación desde primaria" },
   ],
